@@ -23,33 +23,33 @@ const characters = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'data.json
 
 //***REDUCE***
 //1. Get total mass of all characters
-let totalmass = 0;
-characters.forEach(e => totalmass += parseInt(e['mass']));
-console.log(totalmass);
+// let totalmass = 0;
+// characters.forEach(e => totalmass += parseInt(e['mass']));
+// console.log(totalmass);
 
 //2. Get total height of all characters
-let totalHeight = 0;
-characters.forEach(e => totalHeight += parseInt(e['height']));
-console.log(totalHeight);
+// let totalHeight = 0;
+// characters.forEach(e => totalHeight += parseInt(e['height']));
+// console.log(totalHeight);
 
 //3. Get total number of characters by eye color
-console.log(characters.filter(e => e['eye_color'] === 'blue').length);
+// console.log(characters.filter(e => e['eye_color'] === 'blue').length);
 
-const eyeObj = {};
-characters.forEach(e => {
-   let property = e['eye_color'];
-   if (eyeObj[property])
-      eyeObj[property]++;
-   else {
-      eyeObj[property] = 1;
-   }
-});
-console.log(eyeObj);
+// const eyeObj = {};
+// characters.forEach(e => {
+//    let property = e['eye_color'];
+//    if (eyeObj[property])
+//       eyeObj[property]++;
+//    else {
+//       eyeObj[property] = 1;
+//    }
+// });
+// console.log(eyeObj);
 
 //4. Get total number of characters in all the character names
-let totalChars = 0;
-characters.forEach(e => totalChars += e['name'].length);
-console.log(totalChars);
+// let totalChars = 0;
+// characters.forEach(e => totalChars += e['name'].length);
+// console.log(totalChars);
 
 //***FILTER***
 //1. Get characters with mass greater than 100
@@ -87,9 +87,17 @@ console.log(totalChars);
 
 //***EVERY***
 //1. Does every character have blue eyes?
+console.log(characters.every(e => e['height'] === 'blue'));
+
 //2. Does every character have mass more than 40?
+console.log(characters.every(e => e['height'] > 40));
+
 //3. Is every character shorter than 200?
+console.log(characters.every(e => e['height'] < 200));
+
 //4. Is every character male?
+console.log(characters.every(e => e['gender'] === 'male'));
+
 
 //***SOME***
 //1. Is there at least one male character?
