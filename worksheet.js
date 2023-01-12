@@ -2,12 +2,21 @@ const fs = require('fs');
 const path = require('path');
 const characters = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'data.json'), 'utf-8'));
 
-
 //***MAP***
 //1. Get array of all names
+console.log(characters.map(e => e['name']));
 //2. Get array of all heights
+console.log(characters.map(e => e['height']));
 //3. Get array of objects with just name and height properties
+console.log(characters.map(e => {
+   return {
+      name: e['name'],
+      height: e['height']
+   };
+}));
 //4. Get array of all first names
+console.log(characters.map(e => e['name'].split(' ')[0]));
+
 
 //***REDUCE***
 //1. Get total mass of all characters
