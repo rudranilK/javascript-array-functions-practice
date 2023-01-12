@@ -4,18 +4,21 @@ const characters = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'data.json
 
 //***MAP***
 //1. Get array of all names
-console.log(characters.map(e => e['name']));
+// console.log(characters.map(e => e['name']));
+
 //2. Get array of all heights
-console.log(characters.map(e => e['height']));
+// console.log(characters.map(e => e['height']));
+
 //3. Get array of objects with just name and height properties
-console.log(characters.map(e => {
-   return {
-      name: e['name'],
-      height: e['height']
-   };
-}));
+// console.log(characters.map(e => {
+//    return {
+//       name: e['name'],
+//       height: e['height']
+//    };
+// }));
+
 //4. Get array of all first names
-console.log(characters.map(e => e['name'].split(' ')[0]));
+// console.log(characters.map(e => e['name'].split(' ')[0]));
 
 
 //***REDUCE***
@@ -35,7 +38,7 @@ console.log(characters.map(e => e['name'].split(' ')[0]));
 // console.log(characters.filter(e => e['gender'].toLowerCase() === 'male'));
 
 //4. Get all female characters
-// console.log(characters.filter(e => e['gender'].toLowerCase() === 'female'));s
+// console.log(characters.filter(e => e['gender'].toLowerCase() === 'female'));
 
 //***SORT***
 //1. Sort by mass
@@ -51,6 +54,13 @@ console.log(characters.map(e => e['name'].split(' ')[0]));
 
 //***SOME***
 //1. Is there at least one male character?
+console.log(characters.some(e => e['gender'].toLowerCase() === 'male'));
+
 //2. Is there at least one character with blue eyes?
+console.log(characters.some(e => e['eye_color'].toLowerCase() === 'blue'));
+
 //3. Is there at least one character taller than 210?
+console.log(characters.some(e => e['height'] > 210));
+
 //4. Is there at least one character that has mass less than 50?
+console.log(characters.some(e => e['mass'] < 50));
